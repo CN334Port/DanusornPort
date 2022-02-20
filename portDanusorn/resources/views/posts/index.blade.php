@@ -7,9 +7,13 @@
             <h2>TODO LIST</h2>
             @auth('admin')
                 <a href="{{ route('posts.create')}}" class="btn btn-success my-3">create new post</a>
+                <button class="btn btn-danger my-3" onclick="location.href='{{ url('http://127.0.0.1:8000/admin/dashboard') }}'" >Back to Portfolio</button>
                 @else
                 <a href="{{ route('admin.login')}}" class="btn btn-success my-3">Admin login</a>
+                <button class="btn btn-danger my-3" onclick="location.href='{{ url('http://127.0.0.1:8000/dashboard') }}'" >Back to Portfolio</button>
             @endauth
+
+            
         </div>
     </div>
 
