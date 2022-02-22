@@ -10,7 +10,7 @@
             const xhttp = new XMLHttpRequest()
             xhttp.onload = () => {
                 const j = JSON.parse(xhttp.responseText)
-                document.getElementById("basic").innerHTML = j.status;
+                document.getElementById("basic").innerHTML = j.message;
             }
             xhttp.open("GET", "http://localhost:8000/api/project")
             xhttp.send();
