@@ -16,6 +16,7 @@ use Illuminate\Support\Facades\Route;
 
 Route::get('/', function () {
     return view('welcome');
+    // return 'Laravel RestAPI';
 });
 
 Route::get('/dashboard', function () {
@@ -37,3 +38,4 @@ Route::namespace('Admin')->prefix('admin')->name('admin.')->group(function(){
     Route::post('logout','Auth\AuthenticatedSessionController@destroy')->name('logout');
 });
 Route::resource('posts', PostController::class);
+Route::get('project', [ProjectController::class, "index"]);

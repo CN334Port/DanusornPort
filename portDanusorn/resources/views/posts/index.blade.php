@@ -16,6 +16,7 @@
             
         </div>
     </div>
+    
 
     @if($message = Session::get('success'))
         <div class="alert alert-success">
@@ -38,7 +39,7 @@
                 <td>{{ Str::limit($value->description, 100)}}</td>
                 <td>
                     <form action="{{ route('posts.destroy', $value->id)}}" method="post">
-                        <a href="{{ route('posts.show', $value->id)}}" class="btn btn-primary">Show</a>
+                        <a href="{{ route('posts.show', $value->id)}}" class="btn btn-warning">Show</a>
 
                         @auth('admin')
                             <a href="{{ route('posts.edit', $value->id)}}" class="btn btn-primary">Edit</a>
@@ -56,8 +57,9 @@
                 </td>
             </tr>
         @endforeach
+        <a href="{{ route('project')}}" class="btn btn-primary mt-1 my-4">showAjax</a>
     </table>
 
-
+{!! $data->links() !!}
 
 @endsection
